@@ -1,0 +1,227 @@
+:root {
+    --primary-color: #0f1b4c;
+}
+/* PC */
+@media screen and (min-width: 992px) {
+    .mobie__header {
+        display: none;
+    }
+    .featured .view-all {
+        display: none;
+    }
+}
+/* Tablet and mobile */
+@media screen and (max-width: 991px) {
+    .navbar {
+        position: relative;
+    }
+    .navbar ul {
+        display: none;
+    }
+    .navbar img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .toggle-menu {
+        width: 24px;
+        color: var(--primary-color);
+    }
+    .menu__overlay {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s ease;
+    }
+    .menu__drawer {
+        position: fixed;
+        inset: 0 40% 0 0;
+        background-color: #fff;
+        z-index: 2;
+        transform: translateX(-100%);
+        transition: 0.5s ease;
+    }
+    .menu__checkbox:checked ~ .menu__overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+    .menu__checkbox:checked ~ .menu__drawer {
+        transform: translateX(0);
+    }
+    .menu__drawer {
+        padding: 60px;
+    }
+    .menu__drawer ul {
+        margin-top: 40px;
+    }
+    .menu__drawer ul a {
+        display: block;
+        font-weight: 500;
+        font-size: 2rem;
+        color: #4f5361;
+        margin-top: 40px;
+        padding: 8px 0;
+    }
+    .hero-img {
+        display: none;
+    }
+    .hero .info {
+        width: 90%;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .clients .images {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .list-guides {
+        column-gap: 80px;
+    }
+    .list-guides .guides-item {
+        margin: 0 0;
+    }
+    .list-feature {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 30px;
+    }
+    .stats .row {
+        flex-direction: column;
+    }
+    .stats .img-block,
+    .stats .info {
+        width: 100%;
+    }
+    .stats .stats-trend {
+        box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+    .stats .info {
+        padding: 0;
+        order: 1;
+    }
+    .stats .sub-title {
+        width: 70%;
+    }
+    .stats .info .desc {
+        width: 100%;
+    }
+    .stats .img-block {
+        margin-top: 70px;
+        order: 2;
+    }
+    .stats .row-qty {
+        flex-direction: row;
+    }
+    .stats .qty {
+        font-size: 3.4rem;
+    }
+    .subscription .image {
+        display: none;
+    }
+    .footer .row-top {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        row-gap: 80px;
+    }
+}
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .menu__xmash {
+        display: none;
+    }
+    .hide-on-tablet {
+        display: none;
+    }
+    .featured .view-all {
+        display: none;
+    }
+}
+/* Mobie */
+@media screen and (max-width: 767px) {
+    .hide-on-mobile {
+        display: none;
+    }
+    #hide-on-mobile {
+        display: none;
+    }
+    .hero-wrap {
+        height: calc(100vh - 80px);
+    }
+    .menu__drawer {
+        padding: 40px;
+        inset: 0;
+    }
+    .menu__logo-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .menu__xmash {
+        width: 20px;
+        color: #aaa;
+    }
+    .action {
+        display: none;
+    }
+    .hide-on-tablet .hide__active {
+        /* Tại sao ko thay .hide__active = a. vì độ ưu tiên của css 
+        class = 10d , type = 1d
+        .menu__drawer ul a , điểm = 10 + 1 + 1 = 12  (1)
+        .hide-on-tablet .hide__active , điểm = 10 + 10 = 20 (2)
+        .hide-on-tablet a , điểm = 10 + 1 = 11 (3)
+        (1) > (3) nên ưu tiên ăn css hơn
+        (2) > (1) nên ưu tiên ăn css. ra kết quả
+        */
+        color: #0f1b4c;
+        font-style: oblique;
+        font-weight: 600;
+    }
+    .clients .images {
+        row-gap: 20px;
+    }
+    .list-guides {
+        flex-direction: column;
+        row-gap: 60px;
+    }
+    .header-featured .desc {
+        font-size: 1.5rem;
+    }
+    .list-feature {
+        grid-template-columns: 1fr;
+    }
+    .featured .view-all {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    .stats .row-qty {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 40px;
+    }
+    .stats .img-block .image {
+        width: 100%;
+    }
+    .stats .qty-item {
+        text-align: center;
+    }
+    .subscription .info {
+        padding: 0 30px;
+        text-align: center;
+    }
+    .footer .row-top {
+        column-gap: 60px;
+    }
+    .footer .row-cpy {
+        flex-direction: column;
+        row-gap: 20px;
+        align-items: center;
+    }
+    .footer .copyright {
+        margin: 0;
+    }
+}
